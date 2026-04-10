@@ -1,0 +1,9 @@
+schemaVersion: "0.0.1"
+kind: "studio-config"
+session:
+    description: "Seqera Studio R-IDE"
+    template:
+        kind: "registry"
+        registry: "public.cr.seqera.io/platform/data-studio-r-ide:2025.04.1-0.11"
+        # kind: "dockerfile"        <-- uncomment if you want to customize the image
+        # dockerfile: "Dockerfile"  <-- path to your custom Dockerfile
