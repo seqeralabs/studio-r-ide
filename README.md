@@ -42,5 +42,5 @@ To create a customized version:
 The pre-built image is available at:
 
 ```
-public.cr.seqera.io/platform/data-studio-r-ide:2025.04.1-0.11
+public.cr.seqera.io/platform/data-studio-ride:2026.01.2-0.12.0
 ```
