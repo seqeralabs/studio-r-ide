@@ -4,6 +4,6 @@ session:
     description: "Seqera Studio R-IDE"
     template:
         kind: "registry"
-        registry: "public.cr.seqera.io/platform/data-studio-ride:2026.01.2-0.12.0"
+        registry: "public.cr.seqera.io/platform/data-studio-ride:2026.01.2-0.12.1"
         # kind: "dockerfile"        <-- uncomment if you want to customize the image
         # dockerfile: "Dockerfile"  <-- path to your custom Dockerfile
