@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ARG CONNECT_CLIENT_VERSION=0.14.0
+ARG CONNECT_CLIENT_VERSION=0.14.1
 FROM public.cr.seqera.io/platform/connect-client:${CONNECT_CLIENT_VERSION} AS connect
 
 FROM mambaorg/micromamba:2.5.0 as micromamba
@@ -56,7 +56,7 @@ RUN apt-get update --yes && apt-get install --yes --no-install-recommends \
 # name "/UTC". Rewrite to a clean target.
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime && echo "Etc/UTC" > /etc/timezone
 
-## install rstudio server
+## install r-ide server
 RUN if [ ${TARGETARCH} = "arm64" ]; then \
       wget https://github.com/seqeralabs/r-ide/releases/download/seqera-v2026.01.2%2B418/arm64.deb -O ride.deb; \
     elif [ ${TARGETARCH} = "amd64" ]; then \
@@ -97,7 +97,7 @@ RUN { \
 # Setup NGINX for path routing
 COPY ./nginx.conf.template /etc/nginx/nginx.conf.template
 
-# Setup RStudio configuration
+# Setup r-ide configuration
 COPY ./init /init
 COPY ./rserver.conf /etc/rstudio/rserver.conf
 COPY ./rsession.conf /etc/rstudio/rsession.conf
