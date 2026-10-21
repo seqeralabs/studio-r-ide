@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ARG CONNECT_CLIENT_VERSION=0.14.1
+ARG CONNECT_CLIENT_VERSION=0.14.2
 FROM public.cr.seqera.io/platform/connect-client:${CONNECT_CLIENT_VERSION} AS connect
 
 FROM mambaorg/micromamba:2.5.0 as micromamba
 
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 
 ARG CONNECT_CLIENT_VERSION
 LABEL io.seqera.connect.version="${CONNECT_CLIENT_VERSION}"
