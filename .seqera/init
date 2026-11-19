@@ -41,6 +41,10 @@ _skip_var() {
   return 1
 }
 
+# Both files below hold a plain-text copy of the environment, personal secrets included. Files written in a studio
+# go into its checkpoints in the work-dir bucket, so the values end up there too, and stay after the secret is
+# deleted or rotated in Platform.
+
 # <R_HOME>/etc/Renviron.site: plain KEY=value, read by every R session at startup.
 # Makes variables available via Sys.getenv() in the R console.
 {
