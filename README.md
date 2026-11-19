@@ -9,7 +9,7 @@ check the existing tags using the pattern: `r-ide/<version>/connect/<version>`.
 - **[RStudio Server](https://posit.co/products/open-source/rstudio-server/) (Seqera R-IDE v2026.01.2)** — browser-based R development environment
 - **R 4.5.3** — via micromamba/conda-forge, including the CRAN "recommended" packages
 - **Python 3.13** — via micromamba/conda-forge
-- **R packages** — r-markdown, pandoc
+- **R packages** — rmarkdown, knitr, stringr, stringi, pandoc
 - **NGINX** — reverse proxy for path-based routing
 - **connect-client** — Seqera connect client for studio integration
 
@@ -19,7 +19,7 @@ check the existing tags using the pattern: `r-ide/<version>/connect/<version>`.
 
 - `studio-config.yaml` — references the pre-built image; studios using this branch will not require a build step
 - `Dockerfile` — shows how the image was built; fork this repository and modify it to create a custom image
-- `env.yaml` — conda environment specification (Python 3.13, R 4.5.3, r-markdown, pandoc)
+- `env.yaml` — conda environment specification (Python 3.13, R 4.5.3, rmarkdown, knitr, stringr, stringi, pandoc)
 - `init` — startup script that launches RStudio Server and NGINX
 - `rserver.conf` — RStudio Server configuration
 - `rsession.conf` — RStudio session configuration
@@ -42,5 +42,5 @@ To create a customized version:
 The pre-built image is available at:
 
 ```
-public.cr.seqera.io/platform/data-studio-ride:2026.01.2-0.15.0
+public.cr.seqera.io/platform/data-studio-ride:2026.01.2-0.16.0
 ```
